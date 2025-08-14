@@ -12,6 +12,7 @@
     padding: 6px;
     li {
       display: flex;
+      align-items: center;
       gap: 0.65rem;
       color: vars.$text-gray;
       font-weight: 600;
