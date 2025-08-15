@@ -1,0 +1,36 @@
+@use "./variables" as vars;
+.category {
+  color: #4e4e4e;
+  padding: 2.5rem 0 5.6rem 0;
+  .category__navigation {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2.6rem;
+      justify-content: center;
+      align-items: center;
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.3rem;
+        a {
+          background-color: #f4f4f4;
+          padding: 2rem;
+          border-radius: 10px;
+        }
+        &:hover {
+          color: vars.$text-blue;
+          a {
+            background-color: white;
+          }
+          img {
+            filter: invert(9%) sepia(100%) saturate(6395%) hue-rotate(255deg)
+              brightness(74%) contrast(101%);
+          }
+        }
+      }
+    }
+  }
+}

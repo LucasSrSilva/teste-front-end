@@ -13,7 +13,7 @@
     position: absolute;
     inset: 0;
     z-index: -2;
-    filter: brightness(0.5);
+    filter: brightness(1.2);
     @include background-image();
   }
   ::after {
