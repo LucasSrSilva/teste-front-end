@@ -1,4 +1,5 @@
 import Header from "../components/Header"
+import RelationedProducts from "../components/RelationedProducts"
 import Icon from "../components/ui/Icon"
 
 
@@ -25,6 +26,7 @@ function Home() {
           </ul>
         </nav>
       </section>
+      <RelationedProducts />
     </>
   )
 }

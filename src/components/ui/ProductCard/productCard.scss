@@ -1,0 +1,47 @@
+@use "../../../styles/variables" as vars;
+.product__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  color: vars.$text-gray-350;
+  padding: 0.8rem 0.75rem;
+  box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.22);
+  min-width: 18rem;
+  .product__card-name {
+    font-weight: 300;
+    font-size: 0.95rem;
+    padding-right: 30%;
+  }
+  .product__card-priceInfo {
+    width: 100%;
+    .product__card-originalPrice {
+      color: #808080;
+      text-decoration: line-through;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+    .product__card-discountPrice {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .product__card-installment {
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+    .product__card-shipping {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: vars.$text-light-purple;
+    }
+  }
+  .product__card-button {
+    padding: 0.75rem 0;
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: white;
+    background-color: vars.$text-light-purple;
+  }
+}
