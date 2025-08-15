@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../services/product/product.service";
 import ProductCard from "./ui/ProductCard/ProductCard";
 import type { Product } from "../services/product/product.type";
+import Icon from "./ui/Icon";
 
 export default function RelationedProducts() {
-    // const [current, setCurrent] = useState(0)
+    const [current, setCurrent] = useState(0)
     const [products, setProducts] = useState<Product[]>([])
     useEffect(() => {
         async function fetchProducts() {
@@ -15,6 +16,13 @@ export default function RelationedProducts() {
         }
         fetchProducts()
     }, [])
+    const itens_per_page = 4
+    function handleNextBtn() {
+        setCurrent(current + 1)
+    }
+    function handlePrevBtn() {
+        setCurrent(current - 1)
+    }
     return (
         <section className="products" aria-labelledby="products-title">
             <div className="products__title">
@@ -31,11 +39,11 @@ export default function RelationedProducts() {
                 <li><a href="#">VER TODOS</a></li>
             </ul></nav>
             <div aria-label="Lista de produtos" className="products__carousel">
-                <button>Prev</button>
-                {products.map((product, index) => (
+                <button onClick={handlePrevBtn} disabled={current === 0} className="products__carousel-prevBtn"><Icon src="/icons/prevBtn.svg" hidden /></button>
+                {products.slice(current, current + itens_per_page).map((product, index) => (
                     <ProductCard key={index} descripstionShort={product.descripstionShort} photo={product.photo} price={product.price} productName={product.productName} />
                 ))}
-                <button>Next</button>
+                <button onClick={handleNextBtn} disabled={current >= products.length - itens_per_page} className="products__carousel-nextBtn"><Icon src="/icons/nextBtn.svg" hidden /></button>
             </div>
         </section>
     )
