@@ -17,6 +17,8 @@
           justify-content: center;
           align-items: center;
           gap: 1.3rem;
+          font-weight: 500;
+          font-size: 0.875rem;
           color: vars.$text-gray-200;
           .category__navigation-icon {
             border-radius: 10px;
@@ -26,6 +28,7 @@
           }
           &:hover {
             color: vars.$text-blue;
+            font-weight: 600;
             background-color: white;
 
             img {
