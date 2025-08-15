@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
+import { getProducts } from "../services/product/product.service";
 import ProductCard from "./ui/ProductCard/ProductCard";
+import type { Product } from "../services/product/product.type";
 
 export default function RelationedProducts() {
     // const [current, setCurrent] = useState(0)
+    const [products, setProducts] = useState<Product[]>([])
+    useEffect(() => {
+        async function fetchProducts() {
+            const products = await getProducts()
+            if (products) {
+                setProducts(products)
+            }
+        }
+        fetchProducts()
+    }, [])
     return (
         <section className="products" aria-labelledby="products-title">
             <div className="products__title">
@@ -19,10 +32,9 @@ export default function RelationedProducts() {
             </ul></nav>
             <div aria-label="Lista de produtos" className="products__carousel">
                 <button>Prev</button>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {products.map((product, index) => (
+                    <ProductCard key={index} descripstionShort={product.descripstionShort} photo={product.photo} price={product.price} productName={product.productName} />
+                ))}
                 <button>Next</button>
             </div>
         </section>
