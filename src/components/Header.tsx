@@ -3,7 +3,7 @@ import Icon from "./ui/Icon"
 export default function Header() {
     return (
         <header className="header">
-            <ul role="region" aria-label="Benefícios" className="header__benefits">
+            <ul aria-label="Benefícios" className="header__benefits">
                 <li><Icon hidden src="/icons/ShieldCheck.svg" /><p>Compra <span>100% segura</span></p></li>
                 <li><Icon hidden src="/icons/Truck.svg" /><p><span>Frete grátis</span> acima de R$ 200</p></li>
                 <li><Icon hidden src="/icons/CreditCard.svg" /><p><span>Parcele</span> suas compras</p></li>
