@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import PartnersSection from "../components/PartnersSection"
 import RelationedProducts from "../components/RelationedProducts"
+import BrandCard from "../components/ui/brandCard/brandCard"
 import Icon from "../components/ui/Icon"
 
 
@@ -27,8 +28,20 @@ function Home() {
           </ul>
         </nav>
       </section>
+      <RelationedProducts category />
+      <PartnersSection />
       <RelationedProducts />
       <PartnersSection />
+      <section aria-labelledby="brand-title" className="brands" >
+        <h1 className="brands__title">Navegue por marcas</h1>
+        <div className="brands__container">
+          {
+            Array.from({ length: 5 }).map((_, idx) => (
+              <BrandCard key={idx} />
+            ))
+          }
+        </div>
+      </section>
     </>
   )
 }

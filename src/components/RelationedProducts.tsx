@@ -4,7 +4,7 @@ import ProductCard from "./ui/productCard/ProductCard";
 import type { Product } from "../services/product/product.type";
 import Icon from "./ui/Icon";
 
-export default function RelationedProducts() {
+export default function RelationedProducts({ category }: { category?: boolean }) {
     const [current, setCurrent] = useState(0)
     const [products, setProducts] = useState<Product[]>([])
     useEffect(() => {
@@ -30,14 +30,16 @@ export default function RelationedProducts() {
                 <h1 id="products-title">Produtos relacionados</h1>
                 <span className="products__title-line" aria-hidden />
             </div>
-            <nav className="products__navigation"><ul>
-                <li><a href="#">CELULAR</a></li>
-                <li><a href="#">ACESSÓRIOS</a></li>
-                <li><a href="#">TABLETS</a></li>
-                <li><a href="#">NOTEBOOKS</a></li>
-                <li><a href="#">TVS</a></li>
-                <li><a href="#">VER TODOS</a></li>
-            </ul></nav>
+            {category ?
+                <nav className="products__navigation"><ul>
+                    <li><a href="#">CELULAR</a></li>
+                    <li><a href="#">ACESSÓRIOS</a></li>
+                    <li><a href="#">TABLETS</a></li>
+                    <li><a href="#">NOTEBOOKS</a></li>
+                    <li><a href="#">TVS</a></li>
+                    <li><a href="#">VER TODOS</a></li>
+                </ul></nav>
+                : <h1 className="products__all">Ver todos</h1>}
             <div aria-label="Lista de produtos" className="products__carousel">
                 <button onClick={handlePrevBtn} disabled={current === 0} className="products__carousel-prevBtn"><Icon src="/icons/prevBtn.svg" hidden /></button>
                 {products.slice(current, current + itens_per_page).map((product, index) => (

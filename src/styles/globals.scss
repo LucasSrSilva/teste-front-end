@@ -1,4 +1,4 @@
-@use "./variables.scss";
+@use "./variables.scss" as vars;
 @use "./header";
 @use "./hero.scss";
 @use "./category.scss";
@@ -31,5 +31,20 @@ a {
   padding: 0 80px;
   width: 100%;
   gap: 13px;
-  margin-top: 90px;
+  margin: 90px 0;
+}
+
+.brands {
+  &__title {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: vars.$text-light-purple;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+  }
 }
