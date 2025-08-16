@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/product/product.service";
-import ProductCard from "./ui/ProductCard/ProductCard";
+import ProductCard from "./ui/productCard/ProductCard";
 import type { Product } from "../services/product/product.type";
 import Icon from "./ui/Icon";
 
