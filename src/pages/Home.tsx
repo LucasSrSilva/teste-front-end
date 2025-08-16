@@ -1,3 +1,4 @@
+import Footer from "../components/Footer"
 import Header from "../components/Header"
 import PartnersSection from "../components/PartnersSection"
 import RelationedProducts from "../components/RelationedProducts"
@@ -43,6 +44,7 @@ function Home() {
         </div>
       </section>
       <RelationedProducts />
+      <Footer />
     </>
   )
 }
