@@ -52,12 +52,90 @@
 }
 .product__dialog {
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
-}
-
-// Style the backdrop globally or at root level
-.product__dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  transform: translatey(-50%);
+  margin: 0 auto;
+  border-radius: 6px;
+  .product__dialog-container {
+    padding: 3.5rem 3.25rem 2.5rem 3.25rem;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    place-items: center;
+    gap: 0 5rem;
+    .product__dialog-closeBtn {
+      color: black;
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      font-size: 1.2rem;
+    }
+    .product__dialog-image {
+      grid-row: span 2;
+    }
+    .product__dialog-productInfo {
+      text-align: start;
+      color: vars.$text-gray-350;
+      font-size: 1.25rem;
+      letter-spacing: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      .product__dialog-name {
+        font-weight: 400;
+      }
+      .product__dialog-discountPrice {
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+      .product__dialog-description {
+        font-size: 0.625rem;
+        color: vars.$text-gray;
+        line-height: 1.5;
+      }
+      .product__dialog-details {
+        color: vars.$text-light-purple;
+        font-weight: 600;
+        line-height: 1;
+        font-size: 0.625rem;
+        letter-spacing: 5%;
+        text-decoration: none;
+      }
+    }
+    .product__dialog-buttons {
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      justify-self: start;
+      .product__dialog-counter {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #271c47;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        line-height: 1;
+        padding: 0.5rem 0.625rem;
+        span {
+          font-weight: 500;
+        }
+      }
+      .product__dialog-button {
+        font-weight: 700;
+        line-height: 1;
+        color: #271c47;
+        background-color: vars.$primary-yellow;
+        padding: 0.55rem 3.5rem;
+        border-radius: 6px;
+        border: 1px solid vars.$primary-yellow;
+      }
+    }
+  }
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.54);
+  }
 }

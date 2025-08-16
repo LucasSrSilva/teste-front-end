@@ -41,7 +41,7 @@ export default function RelationedProducts() {
             <div aria-label="Lista de produtos" className="products__carousel">
                 <button onClick={handlePrevBtn} disabled={current === 0} className="products__carousel-prevBtn"><Icon src="/icons/prevBtn.svg" hidden /></button>
                 {products.slice(current, current + itens_per_page).map((product, index) => (
-                    <ProductCard key={index} descripstionShort={product.descripstionShort} photo={product.photo} price={product.price} productName={product.productName} />
+                    <ProductCard key={index} descriptionShort={product.descriptionShort} photo={product.photo} price={product.price} productName={product.productName} />
                 ))}
                 <button onClick={handleNextBtn} disabled={current >= products.length - itens_per_page} className="products__carousel-nextBtn"><Icon src="/icons/nextBtn.svg" hidden /></button>
             </div>
