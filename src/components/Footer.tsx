@@ -1,3 +1,4 @@
+import Icon from "./ui/Icon";
 
 export default function Footer() {
     return (
@@ -17,22 +18,26 @@ export default function Footer() {
                 </form>
             </section>
             <section className="footer__links" aria-label="links">
-                <div>
+                <div className="footer__social">
                     <img src="/logo.svg" alt="econverse" />
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <nav><a href=""></a><a href=""></a><a href=""></a></nav>
+                    <nav><a href=""><Icon src="/icons/instagram.svg" alt="instagram" /></a><a href=""><Icon src="/icons/facebook.svg" alt="facebook" /></a><a href=""><Icon src="/icons/linkedin.svg" alt="linkedin" /></a></nav>
                 </div>
-                <nav>
-                    <h1>Institucional</h1>
-                    <a href="">Sobre Nós</a><a href="">Movimento</a><a href="">Trabalhe conosco</a></nav>
-                <nav>
-                    <h1>Ajuda</h1>
-                    <a href="">Suporte</a><a href="">Fale Conosco</a><a href="">Perguntas Frequentes</a></nav>
-                <nav>
-                    <h1>Termos</h1>
-                    <a href="">Termos e Condições</a><a href="">Política de Privacidade</a><a href="">Troca e Devolução</a></nav>
+                <div className="separator" />
+                <div className="footer__institutional">
+
+                    <nav>
+                        <h1>Institucional</h1>
+                        <a href="">Sobre Nós</a><a href="">Movimento</a><a href="">Trabalhe conosco</a></nav>
+                    <nav>
+                        <h1>Ajuda</h1>
+                        <a href="">Suporte</a><a href="">Fale Conosco</a><a href="">Perguntas Frequentes</a></nav>
+                    <nav>
+                        <h1>Termos</h1>
+                        <a href="">Termos e Condições</a><a href="">Política de Privacidade</a><a href="">Troca e Devolução</a></nav>
+                </div>
             </section>
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            <p className="footer__term">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </footer>
     )
 }
