@@ -2,7 +2,7 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import PartnersSection from "../components/PartnersSection"
 import RelationedProducts from "../components/RelationedProducts"
-import BrandCard from "../components/ui/brandCard/brandCard"
+import BrandCard from "../components/ui/brandCard/BrandCard"
 import Icon from "../components/ui/Icon"
 
 
