@@ -1,0 +1,56 @@
+@use "./variables" as vars;
+@mixin background-image {
+  background-image: url("/hero-bg.jpg");
+  background-size: 137%;
+  background-position: 20% 32%;
+}
+.hero {
+  height: 390px;
+  position: relative;
+  padding: 5rem;
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    filter: brightness(1.2);
+    @include background-image();
+  }
+  ::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.3;
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  .hero__title {
+    font-size: 3rem;
+    max-width: 50%;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .hero__subtitle {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    span {
+      font-weight: 700;
+      color: vars.$primary-yellow;
+    }
+  }
+  .hero__button {
+    color: #271c47;
+    background-color: vars.$primary-yellow;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 3.375rem;
+    border-radius: 5px;
+  }
+}

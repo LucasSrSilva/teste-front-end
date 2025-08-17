@@ -1,0 +1,53 @@
+@use "./variables.scss" as vars;
+@use "./header";
+@use "./hero.scss";
+@use "./category.scss";
+@use "./relationed-products.scss";
+@use "./footer.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  height: 500vh;
+}
+button,
+a {
+  cursor: pointer;
+  background-color: white;
+}
+.partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  width: 100%;
+  gap: 13px;
+  margin: 90px 0;
+}
+
+.brands {
+  margin-bottom: 90px;
+  &__title {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: vars.$text-light-purple;
+    font-size: 1.8rem;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+  }
+}

@@ -1,0 +1,43 @@
+@use "./variables" as vars;
+.category {
+  color: #4e4e4e;
+  padding: 2.5rem 0 5.6rem 0;
+  .category__navigation {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2.6rem;
+      justify-content: center;
+      align-items: center;
+      li {
+        a {
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1.3rem;
+          font-weight: 500;
+          font-size: 0.875rem;
+          color: vars.$text-gray-200;
+          .category__navigation-icon {
+            border-radius: 10px;
+            padding: 2rem;
+            background-color: #f4f4f4;
+            box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.13);
+          }
+          &:hover {
+            color: vars.$text-blue;
+            font-weight: 600;
+            background-color: white;
+
+            img {
+              filter: invert(9%) sepia(100%) saturate(6395%) hue-rotate(255deg)
+                brightness(74%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

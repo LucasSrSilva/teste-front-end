@@ -1,0 +1,55 @@
+@use "../../../styles/variables" as vars;
+@mixin background-image {
+  background-image: url("/partner-bg.jpg");
+  background-size: 145%;
+  background-position: 40% 30%;
+}
+.partner__card {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+  padding: 114px 0 40px 44px;
+  &-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
+  &-button {
+    color: #271c47;
+    background-color: vars.$primary-yellow;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 3.375rem;
+    border-radius: 5px;
+  }
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    filter: brightness(1.2);
+    @include background-image();
+  }
+  ::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.3;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
